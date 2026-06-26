@@ -268,3 +268,65 @@
     order: -1;
   }
 }
+
+.platformMarkWrap {
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+}
+
+.markLegend {
+  width: min(430px, 82vw);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.markLegend a {
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 16px;
+  text-decoration: none !important;
+  background: rgba(255, 255, 255, 0.62);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.markLegend a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+.markLegend strong,
+.markLegend span {
+  display: block;
+}
+
+.markLegend strong {
+  color: #0f172a;
+  font-size: 13px;
+}
+
+.markLegend span {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+[data-theme='dark'] .markLegend a {
+  background: rgba(15, 23, 42, 0.64);
+}
+
+[data-theme='dark'] .markLegend strong {
+  color: #f8fafc;
+}
+
+[data-theme='dark'] .markLegend span {
+  color: #94a3b8;
+}
+
+@media (max-width: 520px) {
+  .markLegend {
+    grid-template-columns: 1fr;
+  }
+}

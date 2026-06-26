@@ -37,13 +37,30 @@ export default function Home(): JSX.Element {
             </div>
           </div>
 
-          <div className="platformMark" aria-label="Interactive Brian Short Apps Platform Mark">
-            <Link className="ringLink outerRing" to="/handbook/standards/foundations/overview" aria-label="Experience: Foundations and Design System" />
-            <Link className="ringLink middleRing" to="/handbook/product-guides/overview" aria-label="Products: Applications and Packages" />
-            <Link className="ringLink innerRing" to="/handbook/standards/adr/overview" aria-label="Progress: Architecture Decisions and Roadmap" />
-            <Link className="centerPortal" to="/handbook/getting-started/overview">
-              <span>Portal</span>
-            </Link>
+          <div className="platformMarkWrap">
+            <div className="platformMark" aria-label="Interactive Brian Short Apps Platform Mark">
+              <Link className="ringLink outerRing" to="/handbook/standards/foundations/overview" aria-label="Experience: Foundations and Design System" />
+              <Link className="ringLink middleRing" to="/handbook/product-guides/overview" aria-label="Products: Applications and Packages" />
+              <Link className="ringLink innerRing" to="/handbook/standards/adr/overview" aria-label="Progress: Architecture Decisions and Roadmap" />
+              <Link className="centerPortal" to="/handbook/getting-started/overview">
+                <span>Portal</span>
+              </Link>
+            </div>
+
+            <div className="markLegend">
+              <Link to="/handbook/standards/foundations/overview">
+                <strong>Experience</strong>
+                <span>Foundations & standards</span>
+              </Link>
+              <Link to="/handbook/product-guides/overview">
+                <strong>Products</strong>
+                <span>Applications & packages</span>
+              </Link>
+              <Link to="/handbook/standards/adr/overview">
+                <strong>Progress</strong>
+                <span>Architecture & roadmap</span>
+              </Link>
+            </div>
           </div>
         </section>
 
