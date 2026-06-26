@@ -1,5 +1,6 @@
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import { PlatformMark } from '../../../../packages/design-system/src';
 import './index.css';
 
 const statusItems = [
@@ -38,14 +39,7 @@ export default function Home(): JSX.Element {
           </div>
 
           <div className="platformMarkWrap">
-            <div className="platformMark" aria-label="Interactive Brian Short Apps Platform Mark">
-              <Link className="ringLink outerRing" to="/handbook/standards/foundations/overview" aria-label="Experience: Foundations and Design System" />
-              <Link className="ringLink middleRing" to="/handbook/product-guides/overview" aria-label="Products: Applications and Packages" />
-              <Link className="ringLink innerRing" to="/handbook/standards/adr/overview" aria-label="Progress: Architecture Decisions and Roadmap" />
-              <Link className="centerPortal" to="/handbook/getting-started/overview">
-                <span>Portal</span>
-              </Link>
-            </div>
+            <PlatformMark centerLabel="Portal" interactive />
 
             <div className="markLegend">
               <Link to="/handbook/standards/foundations/overview">
