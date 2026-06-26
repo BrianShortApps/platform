@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.docusaurus": true,
+    "**/build": true,
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.docusaurus": true,
+    "**/build": true,
+    "**/dist": true
+  },
+  "typescript.tsdk": "apps/docs-site/node_modules/typescript/lib"
+}
