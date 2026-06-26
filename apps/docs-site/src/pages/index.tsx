@@ -1,5 +1,15 @@
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import './index.css';
+
+const statusItems = [
+  { label: 'Foundation 001', value: 'Approved' },
+  { label: 'Foundation 002', value: 'Active' },
+  { label: 'Design Standards', value: '7' },
+  { label: 'Architecture Decisions', value: '5' },
+  { label: 'Applications', value: '1 Active' },
+  { label: 'Portal', value: 'Online' },
+];
 
 export default function Home(): JSX.Element {
   return (
@@ -7,31 +17,61 @@ export default function Home(): JSX.Element {
       title="Engineering Portal"
       description="Brian Short Apps Engineering Portal"
     >
-      <main style={{ padding: '4rem 2rem', maxWidth: 1100, margin: '0 auto' }}>
-        <p style={{ textTransform: 'uppercase', letterSpacing: '0.12em', fontSize: 13 }}>
-          Brian Short Apps
-        </p>
+      <main className="portal">
+        <section className="portalHero">
+          <div className="portalIntro">
+            <p className="eyebrow">Brian Short Apps</p>
+            <h1>Engineering Portal</h1>
+            <p className="mission">
+              Build software that solves real-world problems through thoughtful
+              engineering, intuitive user experiences, and dependable cloud architecture.
+            </p>
 
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
-          Engineering Portal
-        </h1>
+            <div className="portalActions">
+              <Link className="portalButton primary" to="/handbook/getting-started/overview">
+                Engineering Handbook
+              </Link>
+              <Link className="portalButton secondary" to="/handbook/standards/foundations/overview">
+                Foundations
+              </Link>
+            </div>
+          </div>
 
-        <p style={{ fontSize: '1.25rem', maxWidth: 720 }}>
-          The central engineering handbook for Brian Short Apps standards,
-          architecture, foundations, platform packages, and product systems.
-        </p>
+          <div className="platformMark" aria-label="Interactive Brian Short Apps Platform Mark">
+            <Link className="ringLink outerRing" to="/handbook/standards/foundations/overview" aria-label="Experience: Foundations and Design System" />
+            <Link className="ringLink middleRing" to="/handbook/product-guides/overview" aria-label="Products: Applications and Packages" />
+            <Link className="ringLink innerRing" to="/handbook/standards/adr/overview" aria-label="Progress: Architecture Decisions and Roadmap" />
+            <Link className="centerPortal" to="/handbook/getting-started/overview">
+              <span>Portal</span>
+            </Link>
+          </div>
+        </section>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, marginTop: 40 }}>
-          <Link className="button button--primary button--lg" to="/handbook/getting-started/overview">
-            Engineering Handbook
+        <section className="statusGrid" aria-label="Platform status">
+          {statusItems.map((item) => (
+            <div className="statusCard" key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+            </div>
+          ))}
+        </section>
+
+        <section className="portalSections">
+          <Link className="sectionCard" to="/handbook/standards/foundations/overview">
+            <span>Foundations</span>
+            <p>Identity, platform architecture, and long-term operating principles.</p>
           </Link>
-          <Link className="button button--secondary button--lg" to="/handbook/developer-guides/overview">
-            Developer Guides
+
+          <Link className="sectionCard" to="/handbook/standards/design-standards/overview">
+            <span>Design Standards</span>
+            <p>Brand, color, typography, layout, components, and design language.</p>
           </Link>
-          <Link className="button button--secondary button--lg" to="/handbook/onboarding/overview">
-            Onboarding
+
+          <Link className="sectionCard" to="/handbook/standards/adr/overview">
+            <span>Architecture Decisions</span>
+            <p>The institutional memory behind major platform decisions.</p>
           </Link>
-        </div>
+        </section>
       </main>
     </Layout>
   );
