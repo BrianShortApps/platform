@@ -12,7 +12,7 @@ const statusItems = [
   { label: 'Portal', value: 'Online' },
 ];
 
-export default function Home(): JSX.Element {
+export default function Home() {
   return (
     <Layout
       title="Engineering Portal"

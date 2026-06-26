@@ -1,0 +1,14 @@
+{
+  "name": "@bsa/platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "sync-docs": "node tools/cli/src/commands/sync-docs.mjs",
+    "portal:start": "npm run sync-docs && npm --prefix apps/docs-site start",
+    "portal:build": "npm run sync-docs && npm --prefix apps/docs-site build"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3"
+  }
+}

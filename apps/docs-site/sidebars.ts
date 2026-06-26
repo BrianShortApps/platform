@@ -50,7 +50,7 @@ const sidebars: SidebarsConfig = {
         'standards/adr/overview',
         'standards/adr/ADR-0001-workspace-architecture',
         'standards/adr/ADR-0002-platform-repository-structure',
-        'standards/adr/ADR-0003-three-ring-platform-mark',
+        'standards/adr/adr-0003-three-ring-platform-mark',
         'standards/adr/ADR-0004-component-first-development',
         'standards/adr/ADR-0005-documentation-architecture',
       ],

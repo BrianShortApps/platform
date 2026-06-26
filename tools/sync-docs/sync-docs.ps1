@@ -7,9 +7,9 @@ $StandardsRoot = Join-Path $PlatformRoot "standards"
 $TargetStandards = Join-Path $DocsRoot "standards"
 
 Write-Host ""
-Write-Host "==========================================" -ForegroundColor Cyan
+Write-Host "============================================" -ForegroundColor Cyan
 Write-Host " Brian Short Apps - Documentation Sync" -ForegroundColor Cyan
-Write-Host "==========================================" -ForegroundColor Cyan
+Write-Host "============================================" -ForegroundColor Cyan
 Write-Host ""
 
 Write-Host "Platform Root:"
@@ -31,5 +31,5 @@ Copy-Item `
     -Force
 
 Write-Host ""
-Write-Host "✓ Standards synchronized successfully." -ForegroundColor Green
+Write-Host "[OK] Standards synchronized successfully." -ForegroundColor Green
 Write-Host ""
