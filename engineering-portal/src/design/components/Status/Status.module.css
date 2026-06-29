@@ -1,0 +1,38 @@
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: fit-content;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.dot {
+  width: .55rem;
+  height: .55rem;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+  box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.neutral {
+  color: var(--color-text-muted);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.info {
+  color: var(--color-info);
+}

@@ -6,3 +6,4 @@ export { Input } from "./Input";
 export { Panel } from "./Panel";
 export { EmptyState } from "./EmptyState";
 export { LoadingState } from "./LoadingState";
+export { Status } from "./Status";
