@@ -40,7 +40,7 @@
   flex-shrink: 0;
 }
 
-.footer {
+.meta {
   display: grid;
   gap: var(--space-sm);
 }
@@ -50,4 +50,16 @@
   color: var(--color-text-muted);
   font-size: var(--text-sm);
   line-height: var(--leading-normal);
+}
+
+.headerAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.footer {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-subtle);
 }

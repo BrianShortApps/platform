@@ -12,6 +12,8 @@ interface MetricCardProps {
   icon?: ReactNode;
   tone?: MetricTone;
   status?: string;
+  action?: ReactNode;
+  footer?: ReactNode;
 }
 
 export function MetricCard({
@@ -21,6 +23,8 @@ export function MetricCard({
   icon,
   tone = "neutral",
   status,
+  action,
+  footer,
 }: MetricCardProps) {
   return (
     <Surface className={styles.metricCard}>
@@ -30,15 +34,22 @@ export function MetricCard({
           <p className={styles.value}>{value}</p>
         </div>
 
-        {icon && <div className={styles.icon}>{icon}</div>}
+        {(icon || action) && (
+          <div className={styles.headerAction}>
+            {icon && <div className={styles.icon}>{icon}</div>}
+            {action}
+          </div>
+        )}
       </div>
 
       {(description || status) && (
-        <div className={styles.footer}>
+        <div className={styles.meta}>
           {description && <p className={styles.description}>{description}</p>}
           {status && <Status tone={tone}>{status}</Status>}
         </div>
       )}
+
+      {footer && <div className={styles.footer}>{footer}</div>}
     </Surface>
   );
 }
