@@ -5,3 +5,4 @@ export { Badge } from "./Badge";
 export { Input } from "./Input";
 export { Panel } from "./Panel";
 export { EmptyState } from "./EmptyState";
+export { LoadingState } from "./LoadingState";

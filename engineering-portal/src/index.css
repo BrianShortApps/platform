@@ -101,3 +101,9 @@ body {
 .stack-xl > * + * {
   margin-top: var(--space-xl);
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
