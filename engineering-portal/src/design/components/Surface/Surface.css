@@ -1,0 +1,26 @@
+.bsa-surface {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-2xl);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+}
+
+.bsa-surface--default {
+  background: var(--color-bg-surface);
+}
+
+.bsa-surface--elevated {
+  background: var(--color-bg-elevated);
+  box-shadow: var(--shadow-md);
+}
+
+.bsa-surface--inset {
+  background: var(--color-bg-inset);
+}
+
+.bsa-surface--hero {
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 32rem),
+    var(--color-bg-surface);
+  box-shadow: var(--shadow-glow);
+}
