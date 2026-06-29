@@ -13,3 +13,14 @@ export const spacing = {
   20: "5rem",
   24: "6rem",
 } as const;
+
+export const grid = {
+  xs: "0.25rem",
+  sm: "0.5rem",
+  md: "1rem",
+  lg: "1.5rem",
+  xl: "2rem",
+  "2xl": "3rem",
+  "3xl": "4rem",
+  "4xl": "6rem",
+} as const;

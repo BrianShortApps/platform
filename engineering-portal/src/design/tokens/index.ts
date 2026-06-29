@@ -1,5 +1,6 @@
 export { colors } from "./colors";
-export { spacing } from "./spacing";
+export { spacing, grid } from "./spacing";
+export { containers } from "./containers";
 export { typography } from "./typography";
 export { radius } from "./radius";
 export { shadows } from "./shadows";
