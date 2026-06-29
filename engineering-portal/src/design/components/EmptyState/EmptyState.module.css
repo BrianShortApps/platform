@@ -1,0 +1,46 @@
+.emptyState {
+  display: grid;
+  place-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-3xl) var(--space-xl);
+  text-align: center;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-xl);
+  background: rgba(56, 189, 248, .12);
+  color: var(--color-brand-primary);
+}
+
+.copy {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 34rem;
+}
+
+.title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
