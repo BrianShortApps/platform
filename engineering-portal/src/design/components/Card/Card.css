@@ -1,0 +1,26 @@
+.bsa-card {
+  padding: var(--space-xl);
+}
+
+.bsa-card__header {
+  margin-bottom: var(--space-lg);
+}
+
+.bsa-card__title {
+  margin: 0;
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.bsa-card__description {
+  margin: var(--space-sm) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.bsa-card__content {
+  color: var(--color-text-secondary);
+}
