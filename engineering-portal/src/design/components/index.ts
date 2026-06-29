@@ -1,3 +1,4 @@
-export * from "./Surface";
-export * from "./Card";
-export * from "./Button";
+export { Surface } from "./Surface";
+export { Card } from "./Card";
+export { Button } from "./Button";
+export { Badge } from "./Badge";

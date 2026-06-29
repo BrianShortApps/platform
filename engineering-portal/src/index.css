@@ -20,6 +20,7 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
+  --radius-pill: 999px;
 
   --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.24);
   --shadow-glow: 0 0 40px rgba(56, 189, 248, 0.18);
