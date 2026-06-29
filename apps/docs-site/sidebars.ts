@@ -1,7 +1,12 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   handbookSidebar: [
+    {
+      type: 'category',
+      label: 'BSA Constitution',
+      items: ['standards/foundations/foundation-001/constitution'],
+    },
     {
       type: 'category',
       label: 'Engineering Handbook',
@@ -20,6 +25,8 @@ const sidebars: SidebarsConfig = {
         'standards/foundations/overview',
         'standards/foundations/foundation-001/README',
         'standards/foundations/foundation-002/README',
+        'standards/foundations/foundation-003/README',
+        'standards/foundations/foundation-003/constitution',
       ],
     },
     {
@@ -41,6 +48,8 @@ const sidebars: SidebarsConfig = {
       label: 'Engineering Standards',
       items: [
         'standards/engineering-standards/overview',
+        'standards/engineering-standards/artifact-schema',
+        //'standards/engineering-standards/STD-002-package-structure',
       ],
     },
     {
