@@ -3,6 +3,7 @@ import {
   Button,
   MetricCard,
   WorkspaceBrand,
+  WorkspaceBreadcrumbs,
   WorkspaceHeader,
   WorkspaceLayout,
   WorkspaceSidebar,
@@ -39,7 +40,21 @@ function App() {
           eyebrow="Workspace"
           title="Engineering Portal"
           description="A centralized workspace for BrianShortApps engineering systems, artifacts, services, and platform foundations."
-          meta={<Badge variant="success">Design System Active</Badge>}
+          meta={
+            <>
+              <WorkspaceBreadcrumbs
+                items={[
+                  { label: "Foundation", href: "#" },
+                  { label: "Design System", href: "#" },
+                  { label: "Workspace Shell" },
+                ]}
+              />
+
+              <Badge variant="success">
+                Design System Active
+              </Badge>
+            </>
+          }
           actions={<Button>New Artifact</Button>}
         />
       }
