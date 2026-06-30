@@ -1,0 +1,1 @@
+export { KnowledgeRegistry, knowledgeRegistry } from './knowledgeRegistry';

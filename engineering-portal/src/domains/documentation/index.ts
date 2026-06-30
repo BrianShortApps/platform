@@ -6,3 +6,4 @@ export type {
 
 export { documentationCatalog } from './documentationCatalog';
 export { DocumentationExplorerPage } from './DocumentationExplorerPage';
+export { documentationKnowledgeNodes } from './documentationKnowledge';

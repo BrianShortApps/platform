@@ -1,5 +1,6 @@
 import { Dashboard } from '../../features/dashboard/Dashboard';
 import { MissionStatus } from '../../features/mission-control/MissionStatus';
+import { KnowledgeSummaryPanel } from './KnowledgeSummaryPanel';
 
 export function MissionControlPage() {
   return (
@@ -14,6 +15,7 @@ export function MissionControlPage() {
       </section>
 
       <MissionStatus />
+      <KnowledgeSummaryPanel />
       <Dashboard />
     </>
   );

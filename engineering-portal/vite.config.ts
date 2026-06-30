@@ -1,18 +1,15 @@
-import { fileURLToPath, URL } from 'node:url';
+import path from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      react: fileURLToPath(new URL('./node_modules/react', import.meta.url)),
-      'react-dom': fileURLToPath(
-        new URL('./node_modules/react-dom', import.meta.url),
-      ),
-      'react/jsx-runtime': fileURLToPath(
-        new URL('./node_modules/react/jsx-runtime.js', import.meta.url),
+      '@bsa/knowledge': path.resolve(__dirname, '../packages/knowledge/src'),
+      'react/jsx-runtime': path.resolve(
+        __dirname,
+        'node_modules/react/jsx-runtime.js',
       ),
     },
   },

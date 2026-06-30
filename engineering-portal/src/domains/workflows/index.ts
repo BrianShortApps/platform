@@ -7,3 +7,4 @@ export type {
 
 export { workflowCatalog } from './workflowCatalog';
 export { WorkflowExplorerPage } from './WorkflowExplorerPage';
+export { workflowKnowledgeNodes } from './workflowKnowledge';
