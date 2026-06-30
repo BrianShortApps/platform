@@ -6,6 +6,11 @@ export function loadNavigation(): NavigationItem[] {
   const platformItems: NavigationItem[] = [
     { id: 'mission-control', label: 'Overview', group: 'mission' },
     { id: 'framework-showcase', label: 'Framework Showcase', group: 'mission' },
+    {
+      id: 'platform-constitution',
+      label: 'Platform Constitution',
+      group: 'mission',
+    },
   ];
 
   const explorerItems: NavigationItem[] = loadActiveExplorers().map(
