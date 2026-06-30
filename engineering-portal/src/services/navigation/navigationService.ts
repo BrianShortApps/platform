@@ -5,5 +5,6 @@ export function loadNavigation(): NavigationItem[] {
     { id: 'mission-control', label: 'Overview', group: 'mission' },
     { id: 'framework-showcase', label: 'Framework Showcase', group: 'mission' },
     { id: 'artifacts', label: 'Artifact Explorer', group: 'domains' },
+    { id: 'repositories', label: 'Repository Explorer', group: 'domains' },
   ];
 }
