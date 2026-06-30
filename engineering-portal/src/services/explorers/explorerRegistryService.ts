@@ -1,6 +1,7 @@
 import { ArtifactExplorerPage } from '../../domains/artifacts';
 import { RepositoryExplorerPage } from '../../domains/repositories';
 import { ServiceExplorerPage } from '../../domains/services';
+import { ApiExplorerPage } from '../../domains/apis';
 
 import type {
   ActiveExplorerId,
@@ -36,12 +37,13 @@ const explorers: ExplorerRegistryItem[] = [
     component: ServiceExplorerPage,
     },
     {
-        id: 'apis',
-        title: 'API Explorer',
-        description: 'Catalog APIs, endpoints, ownership, and integration boundaries.',
-        status: 'planned',
-        category: 'platform',
-        version: '0.0.0',
+    id: 'apis',
+    title: 'API Explorer',
+    description: 'Catalog APIs, endpoints, ownership, and integration boundaries.',
+    status: 'available',
+    category: 'platform',
+    version: '1.0.0',
+    component: ApiExplorerPage,
     },
     {
         id: 'documentation',
