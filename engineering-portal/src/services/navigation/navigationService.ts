@@ -6,5 +6,6 @@ export function loadNavigation(): NavigationItem[] {
     { id: 'framework-showcase', label: 'Framework Showcase', group: 'mission' },
     { id: 'artifacts', label: 'Artifact Explorer', group: 'domains' },
     { id: 'repositories', label: 'Repository Explorer', group: 'domains' },
+    { id: 'services', label: 'Service Explorer', group: 'domains' },
   ];
 }

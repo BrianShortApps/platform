@@ -2,7 +2,8 @@ export type AppView =
   | 'mission-control'
   | 'framework-showcase'
   | 'artifacts'
-  | 'repositories';
+  | 'repositories'
+  | 'services';
 
 export type NavigationItem = {
   id: AppView;

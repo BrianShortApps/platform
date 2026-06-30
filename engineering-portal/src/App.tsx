@@ -5,6 +5,7 @@ import { MissionControlPage } from './domains/mission-control';
 import { FrameworkShowcasePage } from './domains/framework-showcase';
 import { ArtifactExplorerPage } from './domains/artifacts';
 import { RepositoryExplorerPage } from './domains/repositories';
+import { ServiceExplorerPage } from './domains/services';
 
 import type { AppView } from './services/navigation';
 
@@ -19,6 +20,7 @@ function App() {
       {activeView === 'framework-showcase' && <FrameworkShowcasePage />}
       {activeView === 'artifacts' && <ArtifactExplorerPage />}
       {activeView === 'repositories' && <RepositoryExplorerPage />}
+      {activeView === 'services' && <ServiceExplorerPage />}
     </MissionControlLayout>
   );
 }

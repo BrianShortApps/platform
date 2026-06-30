@@ -15,12 +15,12 @@ const explorers: ExplorerCard[] = [
   {
     title: 'Repository Explorer',
     description: 'Validate the framework with source repository visibility.',
-    status: 'In Development',
+    status: 'Available',
   },
   {
     title: 'Service Explorer',
     description: 'Map applications, packages, and internal services.',
-    status: 'Coming Soon',
+    status: 'In Development',
   },
   {
     title: 'API Explorer',
