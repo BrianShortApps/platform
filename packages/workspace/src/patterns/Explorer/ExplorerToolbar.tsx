@@ -16,7 +16,7 @@ export function ExplorerToolbar({
   onFilterChange,
 }: ExplorerToolbarProps) {
   return (
-    <>
+    <div className="workspace-explorer-toolbar">
       {definition.search?.enabled && (
         <input
           className="workspace-explorer-search"
@@ -43,6 +43,6 @@ export function ExplorerToolbar({
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 }

@@ -14,7 +14,23 @@ export type {
   ExplorerDefinition,
   ExplorerFilterOption,
   ExplorerSearchDefinition,
+  ExplorerArtifact,
+  ExplorerArtifactStatus,
+  ExplorerRelationship,
+  ExplorerVersion,
+  ExplorerViewMode,
 } from './patterns/Explorer/index.js';
 
-export type { ExplorerProps } from './patterns/Explorer/index.js';
-export { Explorer } from './patterns/Explorer/index.js';
+export type {
+  ExplorerProps,
+  ExplorerToolbarProps,
+  ExplorerResultsProps,
+  ExplorerInspectorProps,
+} from './patterns/Explorer/index.js';
+
+export {
+  Explorer,
+  ExplorerToolbar,
+  ExplorerResults,
+  ExplorerInspector,
+} from './patterns/Explorer/index.js';

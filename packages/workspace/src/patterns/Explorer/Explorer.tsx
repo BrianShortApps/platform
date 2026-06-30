@@ -9,7 +9,7 @@ export type ExplorerProps = {
 export function Explorer({ definition, children }: ExplorerProps) {
   return (
     <section className="workspace-explorer">
-      <div className="workspace-explorer-header">
+      <header className="workspace-explorer-header">
         {definition.eyebrow && (
           <p className="workspace-explorer-eyebrow">{definition.eyebrow}</p>
         )}
@@ -21,9 +21,9 @@ export function Explorer({ definition, children }: ExplorerProps) {
             {definition.description}
           </p>
         )}
-      </div>
+      </header>
 
-      {children}
+      <div className="workspace-explorer-content">{children}</div>
     </section>
   );
 }
