@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import {
-  Explorer,
-  ExplorerInspector,
-  ExplorerResults,
+  ArtifactExplorer,
   ExplorerToolbar,
   type ExplorerArtifact,
   type ExplorerViewMode,
@@ -120,63 +118,57 @@ export function ArtifactExplorerPage() {
   }, [filteredArtifacts, selectedArtifactId]);
 
   return (
-    <Explorer definition={explorer}>
-      <div className="mx-auto w-full max-w-7xl px-6 py-8">
-        <ExplorerToolbar
-          definition={explorer}
-          query={query}
-          filter={filter}
-          onQueryChange={setQuery}
-          onFilterChange={setFilter}
-        />
+    <div className="mx-auto w-full max-w-7xl px-6 py-8">
+      <ExplorerToolbar
+        definition={explorer}
+        query={query}
+        filter={filter}
+        onQueryChange={setQuery}
+        onFilterChange={setFilter}
+      />
 
-        <div className="mb-4 mt-6 flex items-center justify-between gap-3">
-          <div>
-            <p className="text-sm font-medium text-slate-700">
-              {filteredArtifacts.length} artifacts
-            </p>
-            <p className="text-xs text-slate-500">
-              Select an artifact to begin inspection.
-            </p>
-          </div>
-
-          <div className="flex gap-2">
-            <Button
-              type="button"
-              size="sm"
-              variant={viewMode === 'grid' ? 'primary' : 'outline'}
-              onClick={() => setViewMode('grid')}
-            >
-              Grid
-            </Button>
-
-            <Button
-              type="button"
-              size="sm"
-              variant={viewMode === 'list' ? 'primary' : 'outline'}
-              onClick={() => setViewMode('list')}
-            >
-              List
-            </Button>
-          </div>
+      <div className="mb-4 mt-6 flex items-center justify-between gap-3">
+        <div>
+          <p className="text-sm font-medium text-slate-700">
+            {filteredArtifacts.length} artifacts
+          </p>
+          <p className="text-xs text-slate-500">
+            Select an artifact to begin inspection.
+          </p>
         </div>
 
-        <div className="grid w-full gap-6 lg:grid-cols-[minmax(0,1fr)_380px]">
-          <ExplorerResults
-            artifacts={filteredArtifacts}
-            selectedArtifactId={selectedArtifactId}
-            viewMode={viewMode}
-            onSelectArtifact={(artifact) => setSelectedArtifactId(artifact.id)}
-          />
+        <div className="flex gap-2">
+          <Button
+            type="button"
+            size="sm"
+            variant={viewMode === 'grid' ? 'primary' : 'outline'}
+            onClick={() => setViewMode('grid')}
+          >
+            Grid
+          </Button>
 
-          <ExplorerInspector
-            artifact={selectedArtifact}
-            relationships={buildArtifactRelationships(selectedArtifact)}
-            versions={buildArtifactVersions(selectedArtifact)}
-            previewContent={buildArtifactPreview(selectedArtifact)}
-          />
+          <Button
+            type="button"
+            size="sm"
+            variant={viewMode === 'list' ? 'primary' : 'outline'}
+            onClick={() => setViewMode('list')}
+          >
+            List
+          </Button>
         </div>
       </div>
-    </Explorer>
+
+      <ArtifactExplorer
+        definition={explorer}
+        artifacts={filteredArtifacts}
+        selectedArtifact={selectedArtifact}
+        selectedArtifactId={selectedArtifactId}
+        relationships={buildArtifactRelationships(selectedArtifact)}
+        versions={buildArtifactVersions(selectedArtifact)}
+        previewContent={buildArtifactPreview(selectedArtifact)}
+        viewMode={viewMode}
+        onSelectArtifact={(artifact) => setSelectedArtifactId(artifact.id)}
+      />
+    </div>
   );
 }

@@ -19,6 +19,16 @@ export type {
   ExplorerRelationship,
   ExplorerVersion,
   ExplorerViewMode,
+  WorkspaceEntity,
+  WorkspaceEntityMetadata,
+  WorkspaceEntityStatus,
+  WorkspaceInspectorDefinition,
+  WorkspaceInspectorDescriptionItem,
+  WorkspaceInspectorSection,
+  WorkspaceResultsDefinition,
+  WorkspaceResultsProps,
+  WorkspaceExplorerProps,
+  ArtifactExplorerProps,
 } from './patterns/Explorer/index.js';
 
 export type {
@@ -26,6 +36,9 @@ export type {
   ExplorerToolbarProps,
   ExplorerResultsProps,
   ExplorerInspectorProps,
+  WorkspaceInspectorProps,
+  WorkspaceAdapter,
+  ExplorerRegistryEntry,
 } from './patterns/Explorer/index.js';
 
 export {
@@ -33,4 +46,12 @@ export {
   ExplorerToolbar,
   ExplorerResults,
   ExplorerInspector,
+  WorkspaceResults,
+  WorkspaceInspector,
+  WorkspaceExplorer,
+  ArtifactExplorer,
+  ArtifactWorkspaceAdapter,
+  getRegisteredExplorer,
+  listRegisteredExplorers,
+  registerExplorer,
 } from './patterns/Explorer/index.js';
