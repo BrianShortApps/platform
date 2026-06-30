@@ -3,6 +3,7 @@ import { RepositoryExplorerPage } from '../../domains/repositories';
 import { ServiceExplorerPage } from '../../domains/services';
 import { ApiExplorerPage } from '../../domains/apis';
 import { DocumentationExplorerPage } from '../../domains/documentation';
+import { WorkflowExplorerPage } from '../../domains/workflows';
 
 import type {
   ActiveExplorerId,
@@ -59,11 +60,13 @@ const explorers: ExplorerRegistryItem[] = [
     {
         id: 'workflows',
         title: 'Workflow Explorer',
-        description: 'Track engineering workflows, operating procedures, and release paths.',
-        status: 'planned',
+        description:
+            'Track engineering workflows, operating procedures, and release paths.',
+        status: 'available',
         category: 'operations',
-        version: '0.0.0',
-    },
+        version: '1.0.0',
+        component: WorkflowExplorerPage,
+        },
 ];
 
 export function loadExplorerRegistry(): ExplorerRegistryItem[] {

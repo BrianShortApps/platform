@@ -5,9 +5,10 @@ export type ActiveExplorerId =
   | 'repositories'
   | 'services'
   | 'apis'
-  | 'documentation';
+  | 'documentation'
+  | 'workflows';
 
-export type PlannedExplorerId = 'workflows';
+export type PlannedExplorerId = never;
 
 export type ExplorerId = ActiveExplorerId | PlannedExplorerId;
 
