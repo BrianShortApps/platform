@@ -1,3 +1,5 @@
+import { ExplorerCard } from '../ExplorerCard';
+
 import type { EngineeringArtifact } from '../../services/artifacts';
 
 type ArtifactCardProps = {
@@ -6,16 +8,21 @@ type ArtifactCardProps = {
 
 export function ArtifactCard({ artifact }: ArtifactCardProps) {
   return (
-    <article className="artifact-card">
-      <div className="artifact-card-meta">
-        <span>{artifact.id}</span>
-        <span>{artifact.type}</span>
-      </div>
-
-      <h2>{artifact.title}</h2>
-      <p>{artifact.description}</p>
-
-      <strong>{artifact.status}</strong>
-    </article>
+    <ExplorerCard
+      eyebrow={artifact.id}
+      title={artifact.title}
+      description={artifact.description}
+      badge={artifact.status}
+      metadata={[
+        {
+          label: 'Type',
+          value: artifact.type,
+        },
+        {
+          label: 'Owner',
+          value: artifact.owner,
+        },
+      ]}
+    />
   );
 }

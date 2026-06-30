@@ -1,4 +1,5 @@
 import { DomainExplorer } from '../../components/DomainExplorer';
+import { ExplorerCard } from '../../components/ExplorerCard';
 import {
   repositoryService,
   loadRepositoryExplorerDefinition,
@@ -12,25 +13,27 @@ export function RepositoryExplorerPage() {
       searchItems={repositoryService.search}
       getFilterValue={(repository) => repository.type}
       renderItem={(repository) => (
-        <article className="artifact-card" key={repository.id}>
-          <h2>{repository.name}</h2>
-
-          <p>{repository.description}</p>
-
-          <dl>
-            <dt>Type</dt>
-            <dd>{repository.type}</dd>
-
-            <dt>Status</dt>
-            <dd>{repository.status}</dd>
-
-            <dt>Owner</dt>
-            <dd>{repository.owner}</dd>
-
-            <dt>Technology</dt>
-            <dd>{repository.primaryTechnology}</dd>
-          </dl>
-        </article>
+        <ExplorerCard
+          key={repository.id}
+          eyebrow={repository.name}
+          title={repository.path}
+          description={repository.description}
+          badge={repository.status}
+          metadata={[
+            {
+              label: 'Type',
+              value: repository.type,
+            },
+            {
+              label: 'Owner',
+              value: repository.owner,
+            },
+            {
+              label: 'Technology',
+              value: repository.primaryTechnology,
+            },
+          ]}
+        />
       )}
       emptyTitle="No repositories found"
       emptyDescription="Try adjusting the search query or selected filter."

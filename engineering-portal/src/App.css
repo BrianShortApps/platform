@@ -161,6 +161,76 @@ h1 {
   gap: 16px;
 }
 
+.explorer-card {
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 20px;
+  padding: 22px;
+  background: rgba(15, 23, 42, 0.62);
+}
+
+.explorer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.explorer-card-eyebrow {
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.explorer-card h2 {
+  margin: 8px 0 0;
+  color: #f8fafc;
+  font-size: 1.15rem;
+}
+
+.explorer-card p {
+  margin: 6px 0 18px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.explorer-card-badge {
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: #e0f2fe;
+  background: rgba(14, 165, 233, 0.1);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.explorer-card-metadata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
+.explorer-card-metadata-item {
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  padding-top: 10px;
+}
+
+.explorer-card-metadata dt {
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.explorer-card-metadata dd {
+  margin: 4px 0 0;
+  color: #e5e7eb;
+  font-weight: 700;
+}
+
 .filter-bar {
   display: flex;
   gap: 10px;
