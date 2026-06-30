@@ -1,10 +1,9 @@
+import type { ReactNode } from "react";
 import type {
   ExplorerArtifact,
   ExplorerRelationship,
   ExplorerVersion,
 } from "./ExplorerArtifact.types.js";
-
-import type { ReactNode } from "react";
 
 export type ExplorerInspectorProps = {
   artifact?: ExplorerArtifact | null;
@@ -27,11 +26,14 @@ export function ExplorerInspector({
 }: ExplorerInspectorProps) {
   if (isLoading) {
     return (
-      <aside className="h-full rounded-xl border border-slate-200 bg-white p-5">
-        <div className="mb-6 h-6 w-2/3 animate-pulse rounded bg-slate-100" />
-        <div className="space-y-3">
+      <aside className="workspace-explorer-inspector">
+        <div className="workspace-explorer-inspector-skeleton-heading" />
+        <div className="workspace-explorer-inspector-skeleton-stack">
           {Array.from({ length: 8 }).map((_, index) => (
-            <div key={index} className="h-4 animate-pulse rounded bg-slate-100" />
+            <div
+              key={index}
+              className="workspace-explorer-inspector-skeleton-line"
+            />
           ))}
         </div>
       </aside>
@@ -40,41 +42,37 @@ export function ExplorerInspector({
 
   if (!artifact) {
     return (
-      <aside className="flex h-full min-h-80 items-center justify-center rounded-xl border border-dashed border-slate-300 bg-white p-6 text-center">
-        <div>
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-xl">
-            ⓘ
-          </div>
-          <h3 className="text-base font-semibold text-slate-900">{emptyTitle}</h3>
-          <p className="mt-1 text-sm text-slate-500">{emptyDescription}</p>
-        </div>
+      <aside className="workspace-explorer-inspector-empty">
+        <div className="workspace-explorer-empty-icon">ⓘ</div>
+        <h3 className="workspace-explorer-empty-title">{emptyTitle}</h3>
+        <p className="workspace-explorer-empty-description">
+          {emptyDescription}
+        </p>
       </aside>
     );
   }
 
   return (
-    <aside className="h-full overflow-hidden rounded-xl border border-slate-200 bg-white">
-      <div className="border-b border-slate-200 p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Inspector
-            </p>
-            <h2 className="mt-1 text-lg font-semibold text-slate-900">
-              {artifact.name}
-            </h2>
-            <p className="mt-1 text-sm text-slate-500">{artifact.type}</p>
-          </div>
-
-          {artifact.status && (
-            <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-medium capitalize text-slate-700">
-              {artifact.status}
-            </span>
-          )}
+    <aside className="workspace-explorer-inspector">
+      <div className="workspace-explorer-inspector-header">
+        <div>
+          <p className="workspace-explorer-inspector-eyebrow">Inspector</p>
+          <h2 className="workspace-explorer-inspector-title">
+            {artifact.name}
+          </h2>
+          <p className="workspace-explorer-inspector-subtitle">
+            {artifact.type}
+          </p>
         </div>
+
+        {artifact.status && (
+          <span className="workspace-explorer-status">
+            {artifact.status}
+          </span>
+        )}
       </div>
 
-      <div className="space-y-6 overflow-y-auto p-5">
+      <div className="workspace-explorer-inspector-content">
         <InspectorSection title="Overview">
           <DescriptionList
             items={[
@@ -100,21 +98,23 @@ export function ExplorerInspector({
 
         <InspectorSection title="Relationships">
           {relationships.length === 0 ? (
-            <p className="text-sm text-slate-500">No relationships available.</p>
+            <p className="workspace-explorer-muted">
+              No relationships available.
+            </p>
           ) : (
-            <div className="space-y-2">
+            <div className="workspace-explorer-relationship-list">
               {relationships.map((relationship) => (
                 <div
                   key={relationship.id}
-                  className="rounded-lg border border-slate-200 p-3"
+                  className="workspace-explorer-relationship-card"
                 >
-                  <p className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                  <p className="workspace-explorer-relationship-label">
                     {relationship.label}
                   </p>
-                  <p className="mt-1 text-sm font-semibold text-slate-900">
+                  <p className="workspace-explorer-relationship-name">
                     {relationship.artifactName}
                   </p>
-                  <p className="text-xs text-slate-500">
+                  <p className="workspace-explorer-relationship-type">
                     {relationship.artifactType}
                   </p>
                 </div>
@@ -125,25 +125,23 @@ export function ExplorerInspector({
 
         <InspectorSection title="Version History">
           {versions.length === 0 ? (
-            <p className="text-sm text-slate-500">No versions available.</p>
+            <p className="workspace-explorer-muted">No versions available.</p>
           ) : (
-            <div className="overflow-hidden rounded-lg border border-slate-200">
-              <table className="w-full text-left text-xs">
-                <thead className="bg-slate-50 text-slate-500">
+            <div className="workspace-explorer-version-table-wrap">
+              <table className="workspace-explorer-version-table">
+                <thead>
                   <tr>
-                    <th className="px-3 py-2 font-medium">Version</th>
-                    <th className="px-3 py-2 font-medium">Date</th>
-                    <th className="px-3 py-2 font-medium">Author</th>
+                    <th>Version</th>
+                    <th>Date</th>
+                    <th>Author</th>
                   </tr>
                 </thead>
                 <tbody>
                   {versions.map((version) => (
-                    <tr key={`${version.version}-${version.date}`} className="border-t border-slate-100">
-                      <td className="px-3 py-2 font-medium text-slate-900">
-                        v{version.version}
-                      </td>
-                      <td className="px-3 py-2 text-slate-500">{version.date}</td>
-                      <td className="px-3 py-2 text-slate-500">{version.author}</td>
+                    <tr key={`${version.version}-${version.date}`}>
+                      <td>v{version.version}</td>
+                      <td>{version.date}</td>
+                      <td>{version.author}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -154,11 +152,11 @@ export function ExplorerInspector({
 
         <InspectorSection title="Preview">
           {previewContent ? (
-            <pre className="max-h-64 overflow-auto rounded-lg bg-slate-950 p-3 text-xs text-slate-100">
+            <pre className="workspace-explorer-preview">
               {previewContent}
             </pre>
           ) : (
-            <p className="text-sm text-slate-500">Preview not available.</p>
+            <p className="workspace-explorer-muted">Preview not available.</p>
           )}
         </InspectorSection>
       </div>
@@ -174,8 +172,10 @@ function InspectorSection({
   children: ReactNode;
 }) {
   return (
-    <section>
-      <h3 className="mb-3 text-sm font-semibold text-slate-900">{title}</h3>
+    <section className="workspace-explorer-inspector-section">
+      <h3 className="workspace-explorer-inspector-section-title">
+        {title}
+      </h3>
       {children}
     </section>
   );
@@ -187,13 +187,11 @@ function DescriptionList({
   items: Array<[string, string | undefined]>;
 }) {
   return (
-    <dl className="space-y-2">
+    <dl className="workspace-explorer-description-list">
       {items.map(([label, value]) => (
-        <div key={label}>
-          <dt className="text-xs font-medium uppercase tracking-wide text-slate-500">
-            {label}
-          </dt>
-          <dd className="mt-0.5 text-sm text-slate-800">{value || "—"}</dd>
+        <div key={label} className="workspace-explorer-description-item">
+          <dt>{label}</dt>
+          <dd>{value || "—"}</dd>
         </div>
       ))}
     </dl>
