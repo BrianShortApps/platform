@@ -1,43 +1,7 @@
-type ExplorerStatus = 'Available' | 'In Development' | 'Coming Soon';
-
-type ExplorerCard = {
-  title: string;
-  description: string;
-  status: ExplorerStatus;
-};
-
-const explorers: ExplorerCard[] = [
-  {
-    title: 'Artifact Explorer',
-    description: 'Browse engineering artifacts produced by platform work packages.',
-    status: 'Available',
-  },
-  {
-    title: 'Repository Explorer',
-    description: 'Validate the framework with source repository visibility.',
-    status: 'Available',
-  },
-  {
-    title: 'Service Explorer',
-    description: 'Map applications, packages, and internal services.',
-    status: 'In Development',
-  },
-  {
-    title: 'API Explorer',
-    description: 'Catalog APIs, endpoints, ownership, and integration boundaries.',
-    status: 'Coming Soon',
-  },
-  {
-    title: 'Documentation Explorer',
-    description: 'Surface guides, references, architecture notes, and decision records.',
-    status: 'Coming Soon',
-  },
-  {
-    title: 'Workflow Explorer',
-    description: 'Track engineering workflows, operating procedures, and release paths.',
-    status: 'Coming Soon',
-  },
-];
+import {
+  getExplorerStats,
+  loadExplorerRegistry,
+} from '../../services/explorers';
 
 const frameworkSteps = [
   'Domain Model',
@@ -48,13 +12,27 @@ const frameworkSteps = [
   'Results + Inspector',
 ];
 
-function getStatusClassName(status: ExplorerStatus) {
-  return `showcase-status showcase-status-${status
-    .toLowerCase()
-    .replaceAll(' ', '-')}`;
+function getStatusLabel(status: string) {
+  switch (status) {
+    case 'available':
+      return 'Available';
+    case 'in-development':
+      return 'In Development';
+    case 'planned':
+      return 'Coming Soon';
+    default:
+      return status;
+  }
+}
+
+function getStatusClassName(status: string) {
+  return `showcase-status showcase-status-${status}`;
 }
 
 export function FrameworkShowcasePage() {
+  const explorers = loadExplorerRegistry();
+  const stats = getExplorerStats();
+
   return (
     <>
       <section className="hero">
@@ -69,17 +47,39 @@ export function FrameworkShowcasePage() {
         </p>
       </section>
 
+      <section className="mission-status" aria-label="Explorer registry status">
+        <div>
+          <span>Total Explorers</span>
+          <strong>{stats.total}</strong>
+        </div>
+
+        <div>
+          <span>Available</span>
+          <strong>{stats.available}</strong>
+        </div>
+
+        <div>
+          <span>In Development</span>
+          <strong>{stats.inDevelopment}</strong>
+        </div>
+
+        <div>
+          <span>Planned</span>
+          <strong>{stats.planned}</strong>
+        </div>
+      </section>
+
       <section className="showcase-section">
         <div className="section-heading">
           <p className="eyebrow">Explorer Catalog</p>
-          <h2>One framework. Multiple engineering domains.</h2>
+          <h2>One registry. Multiple engineering domains.</h2>
         </div>
 
         <div className="showcase-grid" aria-label="Explorer modules">
           {explorers.map((explorer) => (
-            <article className="showcase-card" key={explorer.title}>
+            <article className="showcase-card" key={explorer.id}>
               <span className={getStatusClassName(explorer.status)}>
-                {explorer.status}
+                {getStatusLabel(explorer.status)}
               </span>
 
               <h3>{explorer.title}</h3>
@@ -95,9 +95,8 @@ export function FrameworkShowcasePage() {
           <h2>Domain code adapts to the framework.</h2>
           <p>
             Each explorer supplies its own model, adapter, service, inspector,
-            and definition. The shared workspace framework owns the reusable
-            explorer shell, results layout, selection state, and inspection
-            experience.
+            and definition. The registry provides a single source of truth for
+            platform explorer metadata.
           </p>
         </div>
 
