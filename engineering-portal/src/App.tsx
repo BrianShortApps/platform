@@ -26,7 +26,9 @@ function App() {
   return (
     <MissionControlLayout activeView={activeView} onNavigate={setActiveView}>
       {activeView === 'mission-control' && <MissionControlPage />}
-      {activeView === 'framework-showcase' && <FrameworkShowcasePage />}
+      {activeView === 'framework-showcase' && (
+        <FrameworkShowcasePage onNavigate={setActiveView} />
+      )}
       {ActiveExplorerComponent && <ActiveExplorerComponent />}
     </MissionControlLayout>
   );

@@ -4,6 +4,11 @@ import { loadMissionMetadata, loadSystemStatus } from '../../services/system';
 
 import type { AppView } from '../../services/navigation';
 
+import {
+  getExplorerStatusGlyph,
+  getExplorerStatusLabel,
+} from '../../services/explorers';
+
 type MissionControlLayoutProps = {
   children: React.ReactNode;
   activeView: string;
@@ -55,11 +60,21 @@ export function MissionControlLayout({
             {domainItems.map((item) => (
                 <button
                 type="button"
-                className={activeView === item.id ? 'active' : ''}
+                className={`mc-nav-item ${activeView === item.id ? 'active' : ''}`}
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
                 >
-                {item.label}
+                <span>{item.label}</span>
+
+                {item.status && (
+                  <span
+                    className={`mc-nav-status mc-nav-status-${item.status}`}
+                    title={getExplorerStatusLabel(item.status)}
+                    aria-label={getExplorerStatusLabel(item.status)}
+                  >
+                    {getExplorerStatusGlyph(item.status)}
+                  </span>
+                )}
                 </button>
             ))}
 

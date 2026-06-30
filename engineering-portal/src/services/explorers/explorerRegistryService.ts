@@ -88,3 +88,29 @@ export function loadActiveExplorers() {
 export function getExplorerById(id: ActiveExplorerId) {
   return loadActiveExplorers().find((explorer) => explorer.id === id);
 }
+
+export function getExplorerStatusLabel(status: ExplorerRegistryItem['status']) {
+  switch (status) {
+    case 'available':
+      return 'Available';
+    case 'in-development':
+      return 'In Development';
+    case 'planned':
+      return 'Coming Soon';
+    default:
+      return status;
+  }
+}
+
+export function getExplorerStatusGlyph(status: ExplorerRegistryItem['status']) {
+  switch (status) {
+    case 'available':
+      return '●';
+    case 'in-development':
+      return '◐';
+    case 'planned':
+      return '○';
+    default:
+      return '○';
+  }
+}

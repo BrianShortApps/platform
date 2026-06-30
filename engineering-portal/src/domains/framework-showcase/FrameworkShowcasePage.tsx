@@ -1,7 +1,15 @@
 import {
   getExplorerStats,
+  getExplorerStatusLabel,
   loadExplorerRegistry,
 } from '../../services/explorers';
+
+import type { ActiveExplorerId } from '../../services/explorers';
+import type { AppView } from '../../services/navigation';
+
+type FrameworkShowcasePageProps = {
+  onNavigate?: (view: AppView) => void;
+};
 
 const frameworkSteps = [
   'Domain Model',
@@ -12,24 +20,11 @@ const frameworkSteps = [
   'Results + Inspector',
 ];
 
-function getStatusLabel(status: string) {
-  switch (status) {
-    case 'available':
-      return 'Available';
-    case 'in-development':
-      return 'In Development';
-    case 'planned':
-      return 'Coming Soon';
-    default:
-      return status;
-  }
-}
-
 function getStatusClassName(status: string) {
   return `showcase-status showcase-status-${status}`;
 }
 
-export function FrameworkShowcasePage() {
+export function FrameworkShowcasePage({ onNavigate }: FrameworkShowcasePageProps) {
   const explorers = loadExplorerRegistry();
   const stats = getExplorerStats();
 
@@ -79,11 +74,20 @@ export function FrameworkShowcasePage() {
           {explorers.map((explorer) => (
             <article className="showcase-card" key={explorer.id}>
               <span className={getStatusClassName(explorer.status)}>
-                {getStatusLabel(explorer.status)}
+                {getExplorerStatusLabel(explorer.status)}
               </span>
 
               <h3>{explorer.title}</h3>
               <p>{explorer.description}</p>
+              {explorer.component && (
+                <button
+                    type="button"
+                    className="showcase-card-action"
+                    onClick={() => onNavigate?.(explorer.id as ActiveExplorerId)}
+                >
+                    Open Explorer
+                </button>
+                )}
             </article>
           ))}
         </div>

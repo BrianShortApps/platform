@@ -11,4 +11,6 @@ export {
   getExplorerStats,
   loadActiveExplorers,
   loadExplorerRegistry,
+  getExplorerStatusGlyph,
+  getExplorerStatusLabel,
 } from './explorerRegistryService';

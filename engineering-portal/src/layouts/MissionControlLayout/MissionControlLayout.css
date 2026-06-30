@@ -110,3 +110,27 @@
   background: #020617;
   font-size: 0.75rem;
 }
+
+.mc-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mc-nav-status {
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.mc-nav-status-available {
+  color: #22c55e;
+}
+
+.mc-nav-status-in-development {
+  color: #38bdf8;
+}
+
+.mc-nav-status-planned {
+  color: #64748b;
+}

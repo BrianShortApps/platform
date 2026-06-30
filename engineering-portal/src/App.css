@@ -334,6 +334,23 @@ h1 {
   line-height: 1.65;
 }
 
+.showcase-card-action {
+  width: fit-content;
+  margin-top: 18px;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: #e0f2fe;
+  background: rgba(14, 165, 233, 0.14);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.showcase-card-action:hover {
+  background: rgba(14, 165, 233, 0.24);
+}
+
 .showcase-status {
   display: inline-flex;
   width: fit-content;
