@@ -2,6 +2,7 @@ import { ArtifactExplorerPage } from '../../domains/artifacts';
 import { RepositoryExplorerPage } from '../../domains/repositories';
 import { ServiceExplorerPage } from '../../domains/services';
 import { ApiExplorerPage } from '../../domains/apis';
+import { DocumentationExplorerPage } from '../../domains/documentation';
 
 import type {
   ActiveExplorerId,
@@ -46,12 +47,14 @@ const explorers: ExplorerRegistryItem[] = [
     component: ApiExplorerPage,
     },
     {
-        id: 'documentation',
-        title: 'Documentation Explorer',
-        description: 'Surface guides, references, architecture notes, and decision records.',
-        status: 'planned',
-        category: 'knowledge',
-        version: '0.0.0',
+    id: 'documentation',
+    title: 'Documentation Explorer',
+    description:
+        'Surface guides, references, architecture notes, and decision records.',
+    status: 'available',
+    category: 'knowledge',
+    version: '1.0.0',
+    component: DocumentationExplorerPage,
     },
     {
         id: 'workflows',

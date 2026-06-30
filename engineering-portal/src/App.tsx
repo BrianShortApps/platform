@@ -12,7 +12,9 @@ import type { AppView } from './services/navigation';
 type ActiveView = AppView;
 
 function isActiveExplorerId(view: ActiveView): view is ActiveExplorerId {
-  return ['artifacts', 'repositories', 'services', 'apis'].includes(view);
+  return ['artifacts', 'repositories', 'services', 'apis', 'documentation'].includes(
+    view,
+  );
 }
 
 function App() {

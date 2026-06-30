@@ -1,0 +1,68 @@
+import type { DocumentationItem } from './documentation.types';
+
+export const documentationCatalog: DocumentationItem[] = [
+  {
+    id: 'platform-constitution',
+    title: 'Platform Constitution',
+    type: 'standard',
+    status: 'approved',
+    owner: 'BrianShortApps Engineering',
+    summary:
+      'Defines the engineering principles, work package expectations, and architectural rules for the BrianShortApps Engineering Platform.',
+    tags: ['foundation-004', 'platform', 'architecture', 'standards'],
+    relatedRepositories: ['platform'],
+    relatedServices: [],
+    relatedApis: [],
+    relatedWorkflows: ['work-package-delivery'],
+    lastReviewed: '2026-06-30',
+    version: 'Foundation 004',
+  },
+  {
+    id: 'explorer-framework-guide',
+    title: 'Explorer Framework Guide',
+    type: 'guide',
+    status: 'approved',
+    owner: 'BrianShortApps Engineering',
+    summary:
+      'Explains how reusable explorer components, shared contracts, inspectors, results, and toolbars compose into domain-specific explorers.',
+    tags: ['explorer-framework', 'workspace', 'composition'],
+    relatedRepositories: ['platform'],
+    relatedServices: [],
+    relatedApis: [],
+    relatedWorkflows: ['work-package-delivery'],
+    lastReviewed: '2026-06-30',
+    version: 'Foundation 003',
+  },
+  {
+    id: 'platform-registry-architecture',
+    title: 'Platform Registry Architecture',
+    type: 'architecture',
+    status: 'approved',
+    owner: 'BrianShortApps Engineering',
+    summary:
+      'Documents the registry-driven approach used for navigation, showcase rendering, application routing, explorer metadata, and platform capability discovery.',
+    tags: ['registry', 'navigation', 'platform-shell', 'foundation-003'],
+    relatedRepositories: ['platform'],
+    relatedServices: [],
+    relatedApis: [],
+    relatedWorkflows: ['work-package-delivery'],
+    lastReviewed: '2026-06-30',
+    version: 'Foundation 003',
+  },
+  {
+    id: 'api-explorer-adr',
+    title: 'ADR: API Explorer as a First-Class Domain',
+    type: 'adr',
+    status: 'approved',
+    owner: 'BrianShortApps Engineering',
+    summary:
+      'Records the decision to model APIs as a dedicated explorer domain rather than embedding API knowledge inside service or repository metadata.',
+    tags: ['adr', 'api-explorer', 'domain-modeling'],
+    relatedRepositories: ['platform'],
+    relatedServices: [],
+    relatedApis: ['platform-api-catalog'],
+    relatedWorkflows: ['work-package-delivery'],
+    lastReviewed: '2026-06-30',
+    version: 'WP-015',
+  },
+];
