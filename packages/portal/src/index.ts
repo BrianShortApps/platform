@@ -13,6 +13,7 @@ export { TopBar } from "./components/TopBar";
 export { Workspace } from "./components/Workspace";
 export { PortalRuntime } from "./components/PortalRuntime";
 export { PortalRenderer } from "./components/PortalRenderer";
+export { PortalCard } from "./components/PortalCard";
 
 export {
   PortalContext,
