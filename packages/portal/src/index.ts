@@ -31,9 +31,9 @@ export {
   getSortedPortalModules,
 } from "./services/modules";
 
-export { ModuleRegistry } from "./kernel/ModuleRegistry";
 export { PortalKernel } from "./kernel/PortalKernel";
-export { StatusService } from "./kernel/StatusService";
-export { NavigationService } from "./kernel/NavigationService";
+export { ModuleRegistry } from "./runtime/ModuleRegistry";
+export { NavigationService } from "./runtime/NavigationService";
+export { StatusService } from "./runtime/StatusService";
 
 import "./styles/portal.css";

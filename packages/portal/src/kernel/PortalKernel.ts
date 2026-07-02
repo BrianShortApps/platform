@@ -1,8 +1,8 @@
 import type { PortalContextValue, PortalStatusItem } from "../types";
 import type { PortalModule } from "../services/modules";
-import { ModuleRegistry } from "./ModuleRegistry";
-import { NavigationService } from "./NavigationService";
-import { StatusService } from "./StatusService";
+import { ModuleRegistry } from "../runtime/ModuleRegistry";
+import { NavigationService } from "../runtime/NavigationService";
+import { StatusService } from "../runtime/StatusService";
 
 type PortalKernelConfig = {
   appName: string;
