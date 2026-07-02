@@ -1,8 +1,17 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "unifiedjs.vscode-mdx",
-    "ms-vscode.vscode-typescript-next"
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "christian-kohler.npm-intellisense",
+    "editorconfig.editorconfig",
+    "gruntfuggly.todo-tree",
+    "pkief.material-icon-theme",
+    "yzhang.markdown-all-in-one",
+    "streetsidesoftware.code-spell-checker",
+    "mikestead.dotenv"
   ]
 }
