@@ -17,6 +17,7 @@ export { PortalCard } from "./components/PortalCard";
 export { PortalMetric } from "./components/PortalMetric";
 export { PortalSection } from "./components/PortalSection";
 export { PortalGrid } from "./components/PortalGrid";
+export { PortalBadge } from "./components/PortalBadge";
 
 export {
   PortalContext,
