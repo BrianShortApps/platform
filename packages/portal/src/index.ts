@@ -11,6 +11,7 @@ export { SideNavigation } from "./components/SideNavigation";
 export { StatusBar } from "./components/StatusBar";
 export { TopBar } from "./components/TopBar";
 export { Workspace } from "./components/Workspace";
+export { PortalRuntime } from "./components/PortalRuntime";
 
 export {
   PortalContext,

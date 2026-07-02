@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  PortalKernel,
-  PortalLayout,
-  PortalProvider,
-} from "../../packages/portal/src";
+import { PortalLayout, PortalRuntime } from "../../packages/portal/src";
 import { ArtifactExplorerPage } from "./domains/artifacts";
 import { MissionControlPage } from "./domains/mission-control";
 
@@ -29,40 +25,38 @@ const modules: PortalModule[] = [
 function App() {
   const [activeModuleId, setActiveModuleId] = useState(modules[0].id);
 
-  const portalKernel = new PortalKernel({
-    appName: "BrianShortApps Engineering Portal",
-    modules,
-    activeModuleId,
-    currentUser: {
-      id: "local-dev",
-      name: "Local Developer",
-      permissions: ["engineering:read"],
-    },
-    theme: "dark",
-    onNavigate: setActiveModuleId,
-    statusItems: [
-      {
-        id: "environment",
-        label: "Environment",
-        value: "Local",
-      },
-      {
-        id: "foundation",
-        label: "Foundation",
-        value: "PF-003",
-      },
-    ],
-  });
-
-  const activeModule = portalKernel.getActiveModule();
+  const activeModule = modules.find((module) => module.id === activeModuleId);
   const ActiveModuleComponent = activeModule?.component;
 
   return (
-    <PortalProvider value={portalKernel.toContextValue()}>
+    <PortalRuntime
+      appName="BrianShortApps Engineering Portal"
+      modules={modules}
+      activeModuleId={activeModuleId}
+      currentUser={{
+        id: "local-dev",
+        name: "Local Developer",
+        permissions: ["engineering:read"],
+      }}
+      theme="dark"
+      onNavigate={setActiveModuleId}
+      statusItems={[
+        {
+          id: "environment",
+          label: "Environment",
+          value: "Local",
+        },
+        {
+          id: "foundation",
+          label: "Foundation",
+          value: "PF-003",
+        },
+      ]}
+    >
       <PortalLayout>
         {ActiveModuleComponent ? <ActiveModuleComponent /> : null}
       </PortalLayout>
-    </PortalProvider>
+    </PortalRuntime>
   );
 }
 
