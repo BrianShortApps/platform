@@ -40,6 +40,18 @@ function App() {
     },
     theme: "dark",
     onNavigate: setActiveModuleId,
+    statusItems: [
+      {
+        id: "environment",
+        label: "Environment",
+        value: "Local",
+      },
+      {
+        id: "foundation",
+        label: "Foundation",
+        value: "PF-003",
+      },
+    ],
   });
 
   const activeModule = portalKernel.getActiveModule();
