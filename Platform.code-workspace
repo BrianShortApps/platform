@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "name": "platform",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "git.openRepositoryInParentFolders": "always",
+    "typescript.tsdk": "engineering-portal/node_modules/typescript/lib"
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]
+  }
+}
