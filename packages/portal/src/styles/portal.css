@@ -621,3 +621,25 @@
 .portal-button--ghost:hover {
   background: var(--portal-hover);
 }
+
+.portal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--portal-border);
+  border-radius: 18px;
+  background: var(--portal-surface);
+}
+
+.portal-toolbar__left,
+.portal-toolbar__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.portal-toolbar__right {
+  margin-left: auto;
+}
