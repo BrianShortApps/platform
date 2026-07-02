@@ -9,6 +9,7 @@ export type PortalNavigationItem = {
   route: string;
   icon?: ReactNode;
   requiredPermissions?: string[];
+  description?: string;
 };
 
 export type PortalStatusItem = {

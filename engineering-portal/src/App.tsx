@@ -12,6 +12,7 @@ const modules: PortalModule[] = [
     component: MissionControlPage,
     order: 1,
     statusItems: [{ id: "module", label: "Module", value: "Mission Control" }],
+    description: "System overview and platform command center.",
   },
   {
     id: "artifacts",
@@ -19,6 +20,7 @@ const modules: PortalModule[] = [
     component: ArtifactExplorerPage,
     order: 2,
     statusItems: [{ id: "module", label: "Module", value: "Artifacts" }],
+    description: "Browse reusable artifacts, packages, and platform assets.",
   },
 ];
 

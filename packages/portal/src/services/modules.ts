@@ -10,6 +10,7 @@ export type PortalModule = {
   order?: number;
   permissions?: string[];
   statusItems?: PortalStatusItem[];
+  description?: string;
 };
 
 export const getSortedPortalModules = (
@@ -29,6 +30,7 @@ export const getNavigationFromPortalModules = (
     route: `/${module.id}`,
     icon: module.icon,
     requiredPermissions: module.permissions,
+    description: module.description,
   }));
 };
 
