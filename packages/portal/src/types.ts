@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
-export type PortalTheme = 'light' | 'dark' | 'auto';
+export type PortalTheme = "light" | "dark" | "auto";
 
 export type PortalNavigationItem = {
   id: string;
@@ -29,4 +29,6 @@ export type PortalContextValue = {
   theme: PortalTheme;
   navigation: PortalNavigationItem[];
   statusItems: PortalStatusItem[];
+  activeNavigationItemId?: string;
+  onNavigate?: (itemId: string) => void;
 };

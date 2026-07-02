@@ -23,4 +23,12 @@ export {
   getVisibleNavigationItems,
 } from "./services/navigation";
 
+export type { PortalModule } from "./services/modules";
+
+export {
+  getNavigationFromPortalModules,
+  getPortalModuleById,
+  getSortedPortalModules,
+} from "./services/modules";
+
 import "./styles/portal.css";

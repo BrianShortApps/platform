@@ -111,3 +111,17 @@
     white-space: nowrap;
   }
 }
+
+.portal-sidenav__item {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.portal-sidenav__item--active {
+  background: rgba(56, 189, 248, 0.14);
+  color: #ffffff;
+}
