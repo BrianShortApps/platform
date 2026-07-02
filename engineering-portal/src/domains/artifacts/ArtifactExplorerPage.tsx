@@ -1,46 +1,45 @@
-import { useState } from 'react';
-import { Explorer, ExplorerToolbar } from '@bsa/workspace';
-import { ArtifactCard } from '../../components/ArtifactCard';
 import {
-  artifactService,
-  loadArtifactExplorerDefinition,
-} from '../../services/artifacts';
+  PortalCard,
+  PortalExplorer,
+  PortalExplorerList,
+  PortalSection,
+} from "../../../../packages/portal/src";
 
 export function ArtifactExplorerPage() {
-  const explorer = loadArtifactExplorerDefinition();
-
-  const [filter, setFilter] = useState('all');
-  const [query, setQuery] = useState('');
-
-  const searchedArtifacts = artifactService.search(query);
-
-  const filteredArtifacts =
-    filter === 'all'
-      ? searchedArtifacts
-      : searchedArtifacts.filter((artifact) => artifact.type === filter);
-
   return (
-    <Explorer definition={explorer}>
-      <ExplorerToolbar
-        definition={explorer}
-        query={query}
-        filter={filter}
-        onQueryChange={setQuery}
-        onFilterChange={setFilter}
-      />
-
-      <div className="artifact-list">
-        {filteredArtifacts.length > 0 ? (
-          filteredArtifacts.map((artifact) => (
-            <ArtifactCard artifact={artifact} key={artifact.id} />
-          ))
-        ) : (
-          <div className="empty-state">
-            <h2>No artifacts found</h2>
-            <p>Try adjusting the search query or selected filter.</p>
-          </div>
-        )}
-      </div>
-    </Explorer>
+    <PortalExplorer>
+      <PortalSection
+        title="Artifact Explorer"
+        description="Browse reusable packages, platform assets, and engineering artifacts."
+      >
+        <PortalCard>
+          <PortalExplorerList
+            items={[
+              {
+                id: "portal",
+                title: "@brianshortapps/portal",
+                description:
+                  "Reusable application shell, runtime, patterns, and Portal components.",
+                type: "Package",
+              },
+              {
+                id: "workspace",
+                title: "@brianshortapps/workspace",
+                description:
+                  "Reusable workspace and explorer framework for platform domains.",
+                type: "Package",
+              },
+              {
+                id: "knowledge",
+                title: "@brianshortapps/knowledge",
+                description:
+                  "Structured engineering knowledge contracts and relationships.",
+                type: "Package",
+              },
+            ]}
+          />
+        </PortalCard>
+      </PortalSection>
+    </PortalExplorer>
   );
 }

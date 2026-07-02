@@ -30,6 +30,8 @@ export { PortalDashboardActivity } from "./patterns/dashboard/PortalDashboardAct
 export { PortalOverview } from "./patterns/overview/PortalOverview";
 export { PortalManagement } from "./patterns/management/PortalManagement";
 export { PortalManagementList } from "./patterns/management/PortalManagementList";
+export { PortalExplorer } from "./patterns/explorer/PortalExplorer";
+export { PortalExplorerList } from "./patterns/explorer/PortalExplorerList";
 
 export {
   PortalContext,

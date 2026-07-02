@@ -691,3 +691,36 @@
 .portal-management-list__status {
   flex-shrink: 0;
 }
+
+.portal-explorer-list {
+  display: grid;
+  gap: 12px;
+}
+
+.portal-explorer-list__item {
+  padding: 16px;
+  border: 1px solid var(--portal-border);
+  border-radius: 16px;
+  background: var(--portal-surface);
+}
+
+.portal-explorer-list__type {
+  color: var(--portal-muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.portal-explorer-list__title {
+  margin-top: 8px;
+  color: var(--portal-text);
+  font-weight: 800;
+}
+
+.portal-explorer-list__description {
+  margin-top: 6px;
+  color: var(--portal-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
