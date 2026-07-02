@@ -34,5 +34,6 @@ export {
 export { ModuleRegistry } from "./kernel/ModuleRegistry";
 export { PortalKernel } from "./kernel/PortalKernel";
 export { StatusService } from "./kernel/StatusService";
+export { NavigationService } from "./kernel/NavigationService";
 
 import "./styles/portal.css";
