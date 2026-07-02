@@ -26,11 +26,6 @@ h1 {
   line-height: 1.6;
 }
 
-.mission-control {
-  display: grid;
-  gap: 24px;
-}
-
 .mission-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
