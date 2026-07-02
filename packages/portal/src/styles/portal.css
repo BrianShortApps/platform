@@ -429,3 +429,31 @@
 .portal-card__body {
   padding: 24px;
 }
+
+.portal-metric {
+  padding: 24px;
+  border: 1px solid var(--portal-border);
+  border-radius: 20px;
+  background: var(--portal-surface);
+}
+
+.portal-metric__value {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.portal-metric__label {
+  margin-top: 12px;
+  color: var(--portal-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.portal-metric__trend {
+  margin-top: 10px;
+  color: #22c55e;
+  font-size: 0.8rem;
+  font-weight: 700;
+}

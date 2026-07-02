@@ -14,6 +14,7 @@ export { Workspace } from "./components/Workspace";
 export { PortalRuntime } from "./components/PortalRuntime";
 export { PortalRenderer } from "./components/PortalRenderer";
 export { PortalCard } from "./components/PortalCard";
+export { PortalMetric } from "./components/PortalMetric";
 
 export {
   PortalContext,
