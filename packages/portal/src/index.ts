@@ -28,6 +28,8 @@ export { PortalDashboardPanels } from "./patterns/dashboard/PortalDashboardPanel
 export { PortalDashboardActivity } from "./patterns/dashboard/PortalDashboardActivity";
 
 export { PortalOverview } from "./patterns/overview/PortalOverview";
+export { PortalManagement } from "./patterns/management/PortalManagement";
+export { PortalManagementList } from "./patterns/management/PortalManagementList";
 
 export {
   PortalContext,

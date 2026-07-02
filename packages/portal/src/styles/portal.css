@@ -653,3 +653,41 @@
   color: var(--portal-muted);
   font-size: 0.75rem;
 }
+
+.portal-management-list {
+  display: grid;
+  gap: 12px;
+}
+
+.portal-management-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--portal-border);
+  border-radius: 16px;
+  background: var(--portal-surface);
+}
+
+.portal-management-list__title {
+  color: var(--portal-text);
+  font-weight: 800;
+}
+
+.portal-management-list__description {
+  margin-top: 4px;
+  color: var(--portal-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.portal-management-list__meta {
+  margin-top: 8px;
+  color: var(--portal-muted);
+  font-size: 0.75rem;
+}
+
+.portal-management-list__status {
+  flex-shrink: 0;
+}

@@ -5,6 +5,8 @@ import { MissionControlPage } from "./domains/mission-control";
 
 import type { PortalModule } from "../../packages/portal/src";
 
+import { ModulesPage } from "./domains/modules/ModulesPage";
+
 const modules: PortalModule[] = [
   {
     id: "mission-control",
@@ -21,6 +23,15 @@ const modules: PortalModule[] = [
     order: 2,
     statusItems: [{ id: "module", label: "Module", value: "Artifacts" }],
     description: "Browse reusable artifacts, packages, and platform assets.",
+  },
+  {
+    id: "modules",
+    title: "Modules",
+    description:
+      "Manage registered portal modules and application capabilities.",
+    component: ModulesPage,
+    order: 3,
+    statusItems: [{ id: "module", label: "Module", value: "Modules" }],
   },
 ];
 
