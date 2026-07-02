@@ -2,6 +2,7 @@ import type { PortalContextValue, PortalStatusItem } from "../types";
 import type { PortalModule } from "../services/modules";
 import { ModuleRegistry } from "../runtime/ModuleRegistry";
 import { NavigationService } from "../runtime/NavigationService";
+import { PermissionService } from "../runtime/PermissionService";
 import { StatusService } from "../runtime/StatusService";
 
 type PortalKernelConfig = {
@@ -17,12 +18,21 @@ type PortalKernelConfig = {
 export class PortalKernel {
   private readonly moduleRegistry: ModuleRegistry;
   private readonly navigationService: NavigationService;
+  private readonly permissionService: PermissionService;
   private readonly statusService: StatusService;
   private readonly config: PortalKernelConfig;
 
   constructor(config: PortalKernelConfig) {
     this.config = config;
-    this.moduleRegistry = new ModuleRegistry(config.modules);
+
+    this.permissionService = new PermissionService();
+
+    const accessibleModules = this.permissionService.getAccessibleModules(
+      config.modules,
+      config.currentUser,
+    );
+
+    this.moduleRegistry = new ModuleRegistry(accessibleModules);
     this.navigationService = new NavigationService(
       this.moduleRegistry.getAll(),
     );
