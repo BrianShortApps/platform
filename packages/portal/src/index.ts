@@ -36,5 +36,6 @@ export { ModuleRegistry } from "./runtime/ModuleRegistry";
 export { NavigationService } from "./runtime/NavigationService";
 export { StatusService } from "./runtime/StatusService";
 export { PermissionService } from "./runtime/PermissionService";
+export { ThemeService } from "./runtime/ThemeService";
 
 import "./styles/portal.css";

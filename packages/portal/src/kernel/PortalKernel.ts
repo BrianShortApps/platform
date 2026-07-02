@@ -4,6 +4,7 @@ import { ModuleRegistry } from "../runtime/ModuleRegistry";
 import { NavigationService } from "../runtime/NavigationService";
 import { PermissionService } from "../runtime/PermissionService";
 import { StatusService } from "../runtime/StatusService";
+import { ThemeService } from "../runtime/ThemeService";
 
 type PortalKernelConfig = {
   appName: string;
@@ -20,6 +21,7 @@ export class PortalKernel {
   private readonly navigationService: NavigationService;
   private readonly permissionService: PermissionService;
   private readonly statusService: StatusService;
+  private readonly themeService: ThemeService;
   private readonly config: PortalKernelConfig;
 
   constructor(config: PortalKernelConfig) {
@@ -37,6 +39,7 @@ export class PortalKernel {
       this.moduleRegistry.getAll(),
     );
     this.statusService = new StatusService(config.statusItems);
+    this.themeService = new ThemeService(config.theme);
   }
 
   getActiveModule(): PortalModule | undefined {
@@ -49,7 +52,8 @@ export class PortalKernel {
     return {
       appName: this.config.appName,
       currentUser: this.config.currentUser,
-      theme: this.config.theme ?? "dark",
+      theme: this.themeService.getTheme(),
+      themeClassName: this.themeService.getThemeClassName(),
       navigation: this.navigationService.getNavigationItems(),
       activeNavigationItemId: activeModule?.id,
       onNavigate: this.config.onNavigate,

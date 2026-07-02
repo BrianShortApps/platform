@@ -31,4 +31,5 @@ export type PortalContextValue = {
   statusItems: PortalStatusItem[];
   activeNavigationItemId?: string;
   onNavigate?: (itemId: string) => void;
+  themeClassName: string;
 };

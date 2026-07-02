@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { usePortal } from "../contexts/PortalContext";
 import { SideNavigation } from "./SideNavigation";
 import { StatusBar } from "./StatusBar";
 import { TopBar } from "./TopBar";
@@ -9,8 +10,10 @@ type PortalLayoutProps = {
 };
 
 export const PortalLayout = ({ children }: PortalLayoutProps) => {
+  const { themeClassName } = usePortal();
+
   return (
-    <div className="portal-layout">
+    <div className={`portal-layout ${themeClassName}`}>
       <TopBar />
 
       <div className="portal-layout__body">
