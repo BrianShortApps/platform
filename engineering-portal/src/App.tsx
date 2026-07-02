@@ -9,6 +9,8 @@ import { ModulesPage } from "./domains/modules/ModulesPage";
 
 import { SettingsPage } from "./domains/settings/SettingsPage";
 
+import { ReportsPage } from "./domains/reports/ReportsPage";
+
 const modules: PortalModule[] = [
   {
     id: "mission-control",
@@ -34,6 +36,14 @@ const modules: PortalModule[] = [
     component: ModulesPage,
     order: 3,
     statusItems: [{ id: "module", label: "Module", value: "Modules" }],
+  },
+  {
+    id: "reports",
+    title: "Reports",
+    description: "Review platform summaries, readiness, and foundation status.",
+    component: ReportsPage,
+    order: 5,
+    statusItems: [{ id: "module", label: "Module", value: "Reports" }],
   },
   {
     id: "settings",

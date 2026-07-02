@@ -35,6 +35,9 @@ export { PortalExplorerList } from "./patterns/explorer/PortalExplorerList";
 export { PortalSettings } from "./patterns/settings/PortalSettings";
 export { PortalSettingsGroup } from "./patterns/settings/PortalSettingsGroup";
 
+export { PortalReports } from "./patterns/reports/PortalReports";
+export { PortalReportSummary } from "./patterns/reports/PortalReportSummary";
+
 export {
   PortalContext,
   PortalProvider,
