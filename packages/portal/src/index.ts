@@ -6,8 +6,21 @@ export type {
   PortalUser,
 } from "./types";
 
-export { PortalContext, usePortal } from "./contexts/PortalContext";
+export { PortalLayout } from "./components/PortalLayout";
+export { SideNavigation } from "./components/SideNavigation";
+export { StatusBar } from "./components/StatusBar";
+export { TopBar } from "./components/TopBar";
+export { Workspace } from "./components/Workspace";
+
+export {
+  PortalContext,
+  PortalProvider,
+  usePortal,
+} from "./contexts/PortalContext";
+
 export {
   canAccessNavigationItem,
   getVisibleNavigationItems,
 } from "./services/navigation";
+
+import "./styles/portal.css";
