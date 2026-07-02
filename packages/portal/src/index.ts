@@ -19,6 +19,12 @@ export { PortalSection } from "./components/PortalSection";
 export { PortalGrid } from "./components/PortalGrid";
 export { PortalBadge } from "./components/PortalBadge";
 export { PortalButton } from "./components/PortalButton";
+export { PortalToolbar } from "./components/PortalToolbar";
+export { PortalPage } from "./components/PortalPage";
+
+export { PortalDashboard } from "./patterns/dashboard/PortalDashboard";
+export { PortalDashboardMetrics } from "./patterns/dashboard/PortalDashboardMetrics";
+export { PortalDashboardPanels } from "./patterns/dashboard/PortalDashboardPanels";
 
 export {
   PortalContext,
