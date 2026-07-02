@@ -1,6 +1,7 @@
 import {
   PortalCard,
   PortalDashboard,
+  PortalDashboardActivity,
   PortalDashboardMetrics,
   PortalDashboardPanels,
   PortalMetric,
@@ -47,13 +48,37 @@ export function MissionControlPage() {
           </PortalCard>
 
           <PortalCard
-            title="Next Workstream"
-            subtitle="Where the platform moves after this dashboard rebuild."
+            title="Recent Platform Activity"
+            subtitle="Latest Portal Foundation milestones."
           >
-            <p>
-              Continue converting application UI into shared Portal primitives
-              so future apps inherit the same professional interface.
-            </p>
+            <PortalDashboardActivity
+              items={[
+                {
+                  id: "pf-009",
+                  title: "Dashboard pattern added",
+                  description:
+                    "Mission Control now uses reusable Portal dashboard patterns.",
+                  timestamp: "Current session",
+                  status: "success",
+                },
+                {
+                  id: "pf-008",
+                  title: "Composite workspace established",
+                  description:
+                    "Workspace now composes Portal primitives instead of custom UI.",
+                  timestamp: "Earlier today",
+                  status: "info",
+                },
+                {
+                  id: "pf-007",
+                  title: "Mission Control rebuilt",
+                  description:
+                    "Dashboard now uses Portal cards, metrics, sections, and grids.",
+                  timestamp: "Earlier today",
+                  status: "success",
+                },
+              ]}
+            />
           </PortalCard>
         </PortalDashboardPanels>
       </PortalSection>

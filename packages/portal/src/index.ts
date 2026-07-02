@@ -25,6 +25,9 @@ export { PortalPage } from "./components/PortalPage";
 export { PortalDashboard } from "./patterns/dashboard/PortalDashboard";
 export { PortalDashboardMetrics } from "./patterns/dashboard/PortalDashboardMetrics";
 export { PortalDashboardPanels } from "./patterns/dashboard/PortalDashboardPanels";
+export { PortalDashboardActivity } from "./patterns/dashboard/PortalDashboardActivity";
+
+export { PortalOverview } from "./patterns/overview/PortalOverview";
 
 export {
   PortalContext,
