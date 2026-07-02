@@ -724,3 +724,29 @@
   font-size: 0.875rem;
   line-height: 1.5;
 }
+
+.portal-settings-group {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--portal-border);
+  border-radius: 18px;
+  background: var(--portal-surface);
+}
+
+.portal-settings-group__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.portal-settings-group__description {
+  margin: 8px 0 0;
+  color: var(--portal-muted);
+  line-height: 1.5;
+}
+
+.portal-settings-group__body {
+  display: grid;
+  gap: 12px;
+}

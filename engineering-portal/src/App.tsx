@@ -7,6 +7,8 @@ import type { PortalModule } from "../../packages/portal/src";
 
 import { ModulesPage } from "./domains/modules/ModulesPage";
 
+import { SettingsPage } from "./domains/settings/SettingsPage";
+
 const modules: PortalModule[] = [
   {
     id: "mission-control",
@@ -32,6 +34,14 @@ const modules: PortalModule[] = [
     component: ModulesPage,
     order: 3,
     statusItems: [{ id: "module", label: "Module", value: "Modules" }],
+  },
+  {
+    id: "settings",
+    title: "Settings",
+    description: "Configure portal runtime and application preferences.",
+    component: SettingsPage,
+    order: 4,
+    statusItems: [{ id: "module", label: "Module", value: "Settings" }],
   },
 ];
 
