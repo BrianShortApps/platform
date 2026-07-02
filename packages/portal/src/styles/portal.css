@@ -457,3 +457,30 @@
   font-size: 0.8rem;
   font-weight: 700;
 }
+
+.portal-section {
+  display: grid;
+  gap: 20px;
+}
+
+.portal-section__header {
+  display: grid;
+  gap: 8px;
+}
+
+.portal-section__title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.portal-section__description {
+  margin: 0;
+  color: var(--portal-muted);
+  line-height: 1.6;
+}
+
+.portal-section__content {
+  display: grid;
+  gap: 20px;
+}
