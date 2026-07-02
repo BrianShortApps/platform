@@ -58,6 +58,7 @@ export class PortalKernel {
       activeNavigationItemId: activeModule?.id,
       onNavigate: this.config.onNavigate,
       statusItems: this.statusService.getStatusItems(activeModule?.statusItems),
+      activeModule,
     };
   }
 }

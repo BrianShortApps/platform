@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import { PortalLayout } from "./PortalLayout";
+import { PortalRenderer } from "./PortalRenderer";
 import { PortalProvider } from "../contexts/PortalContext";
 import { PortalKernel } from "../kernel/PortalKernel";
 import type { PortalContextValue, PortalStatusItem } from "../types";
@@ -12,15 +13,16 @@ type PortalRuntimeProps = {
   theme?: PortalContextValue["theme"];
   onNavigate?: (moduleId: string) => void;
   statusItems?: PortalStatusItem[];
-  children: ReactNode;
 };
 
-export const PortalRuntime = ({ children, ...config }: PortalRuntimeProps) => {
+export const PortalRuntime = (config: PortalRuntimeProps) => {
   const portalKernel = new PortalKernel(config);
 
   return (
     <PortalProvider value={portalKernel.toContextValue()}>
-      {children}
+      <PortalLayout>
+        <PortalRenderer />
+      </PortalLayout>
     </PortalProvider>
   );
 };

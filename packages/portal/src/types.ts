@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { PortalModule } from "./services/modules";
 
 export type PortalTheme = "light" | "dark" | "auto";
 
@@ -32,4 +33,5 @@ export type PortalContextValue = {
   activeNavigationItemId?: string;
   onNavigate?: (itemId: string) => void;
   themeClassName: string;
+  activeModule?: PortalModule;
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PortalLayout, PortalRuntime } from "../../packages/portal/src";
+import { PortalRuntime } from "../../packages/portal/src";
 import { ArtifactExplorerPage } from "./domains/artifacts";
 import { MissionControlPage } from "./domains/mission-control";
 
@@ -25,9 +25,6 @@ const modules: PortalModule[] = [
 function App() {
   const [activeModuleId, setActiveModuleId] = useState(modules[0].id);
 
-  const activeModule = modules.find((module) => module.id === activeModuleId);
-  const ActiveModuleComponent = activeModule?.component;
-
   return (
     <PortalRuntime
       appName="BrianShortApps Engineering Portal"
@@ -49,14 +46,10 @@ function App() {
         {
           id: "foundation",
           label: "Foundation",
-          value: "PF-003",
+          value: "PF-004",
         },
       ]}
-    >
-      <PortalLayout>
-        {ActiveModuleComponent ? <ActiveModuleComponent /> : null}
-      </PortalLayout>
-    </PortalRuntime>
+    />
   );
 }
 
