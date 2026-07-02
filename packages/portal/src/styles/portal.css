@@ -484,3 +484,39 @@
   display: grid;
   gap: 20px;
 }
+
+.portal-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.portal-grid--1 {
+  grid-template-columns: 1fr;
+}
+
+.portal-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portal-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.portal-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1000px) {
+  .portal-grid--3,
+  .portal-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .portal-grid--2,
+  .portal-grid--3,
+  .portal-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}

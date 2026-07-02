@@ -1,5 +1,6 @@
 import {
   PortalCard,
+  PortalGrid,
   PortalMetric,
   PortalSection,
 } from "../../../../packages/portal/src";
@@ -11,7 +12,7 @@ export function MissionControlPage() {
         title="Platform Overview"
         description="Live foundation status for the BrianShortApps engineering platform."
       >
-        <section className="mission-control__metrics">
+        <PortalGrid columns={4}>
           <PortalMetric
             label="Portal Modules"
             value="2"
@@ -24,14 +25,14 @@ export function MissionControlPage() {
           />
           <PortalMetric label="Foundation" value="007" trend="PF-007 active" />
           <PortalMetric label="Build Status" value="Pass" trend="Ready" />
-        </section>
+        </PortalGrid>
       </PortalSection>
 
       <PortalSection
         title="Operational Focus"
         description="Current workstreams moving the platform toward reusable application delivery."
       >
-        <section className="mission-control__grid">
+        <PortalGrid columns={2}>
           <PortalCard
             title="Platform Status"
             subtitle="Current operational view of the BrianShortApps platform."
@@ -52,7 +53,7 @@ export function MissionControlPage() {
               so future apps inherit the same professional interface.
             </p>
           </PortalCard>
-        </section>
+        </PortalGrid>
       </PortalSection>
     </div>
   );
